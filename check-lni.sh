@@ -5,12 +5,12 @@ DEST=$1
 ADDRESS=https://www.lnipozzuoli.it
 
 notifyerror() {
-	echo "Error. New date: $(cat date.new); New msg: $(cat msg.new)"
+	echo -e "Error. New date: $(cat date.new); New msg: $(cat msg.new)"
 }
 
 notifychange() {
 	echo -e "$(cat date.new)\n\n$(cat msg.new)\n\n$URL"
-	echo -e "$(cat date.new)\n\n$(cat msg.new)\n\n$URL" | mail -s "News dalla Lega Navale" $1
+	echo -e "$(cat date.new)\n\n$(cat msg.new)\n\n$URL" | mail -s "News dalla Lega Navale" $DEST
 }
 
 check4changes() {
