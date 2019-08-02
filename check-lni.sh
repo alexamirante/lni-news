@@ -1,6 +1,7 @@
 #!/bin/bash
 #set -x
 
+DEST=$1
 ADDRESS=https://www.lnipozzuoli.it
 
 notifyerror() {
@@ -8,7 +9,8 @@ notifyerror() {
 }
 
 notifychange() {
-	echo -e "$(cat date.new)\n\n$(cat msg.new)\n\n$URL" | mail -s "News dalla Lega Navale" alessandro.amirante@gmail.com
+	echo -e "$(cat date.new)\n\n$(cat msg.new)\n\n$URL"
+	echo -e "$(cat date.new)\n\n$(cat msg.new)\n\n$URL" | mail -s "News dalla Lega Navale" $1
 }
 
 check4changes() {
