@@ -6,6 +6,7 @@ ADDRESS=https://www.lnipozzuoli.it
 
 notifyerror() {
 	echo -e "Error. New date: $(cat date.new); New msg: $(cat msg.new)"
+	echo -e "Error. New date: $(cat date.new); New msg: $(cat msg.new)" | mail -s "News dalla Lega Navale" $DEST
 }
 
 notifychange() {
